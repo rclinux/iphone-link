@@ -1,0 +1,101 @@
+/* iPhone Link — styling that mirrors the Arch Linux Tweak Tool / Disk Recovery
+   Tool feel: roomy window margins, a 20px page title, a weighted sidebar, and a
+   dark monospace log area. */
+
+window > box {
+    margin: 0;
+}
+
+/* Page titles (label#title). */
+label#title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* Left navigation. */
+#sidebar {
+    background-color: alpha(currentColor, 0.03);
+}
+
+#sidebar label {
+    font-weight: 500;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+/* Current-step line above the progress bar. */
+label#step_label {
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+/* Inline validation messages. */
+label#error_label {
+    color: #e01b24;
+    font-weight: 500;
+}
+
+/* Key/value device facts grid. */
+label.field_key {
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+label.field_value {
+    font-family: 'MesloLGS NF', 'JetBrains Mono', 'Open Sans', monospace;
+}
+
+/* Connection status pill. */
+#status_pill {
+    border-radius: 9px;
+    padding: 3px 12px;
+    font-weight: 600;
+}
+
+#status_pill.connected {
+    background-color: #26a269;
+    color: #fcfcfc;
+}
+
+#status_pill.disconnected {
+    background-color: #c01c28;
+    color: #fcfcfc;
+}
+
+/* Dark log view, like ATT's #textview_log. */
+#textview_log {
+    background-color: #232627;
+    color: #fcfcfc;
+}
+
+#textview_log text {
+    background-color: #232627;
+    color: #fcfcfc;
+    font-family: 'MesloLGS NF', 'JetBrains Mono', 'Open Sans', monospace;
+}
+
+progressbar text {
+    font-size: 12px;
+}
+
+/* Transient toast notification (widgets.Toast). Explicit colours so it reads
+   the same under the light/dark themes of Arch, Debian and Fedora. */
+#toast {
+    background-color: #303336;
+    color: #fcfcfc;
+    border-radius: 9px;
+    padding: 10px 18px;
+    margin: 6px;
+    box-shadow: 0 2px 6px alpha(black, 0.4);
+}
+
+#toast.toast-success {
+    background-color: #26a269;
+}
+
+#toast.toast-error {
+    background-color: #c01c28;
+}

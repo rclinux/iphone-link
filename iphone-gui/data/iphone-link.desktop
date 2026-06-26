@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=iPhone Link
+GenericName=iPhone File and Message Sharing
+Comment=Securely share documents, photos and messages with a connected iPhone
+Exec=iphone-link
+Icon=io.github.rcraig57.iPhoneLink
+Terminal=false
+Type=Application
+Categories=Utility;GTK;FileTransfer;
+Keywords=iphone;ios;apple;sync;photos;documents;messages;libimobiledevice;afc;ifuse;
+StartupNotify=true

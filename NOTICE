@@ -1,0 +1,50 @@
+iPhone Link
+Copyright (C) 2026 Ronald Craig
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version. See the LICENSE file for the full text.
+
+----------------------------------------------------------------------------
+Credits and third-party components
+----------------------------------------------------------------------------
+
+libimobiledevice — https://libimobiledevice.org  (LGPL-2.1-or-later / GPL-2.0+)
+    The cross-platform library and tools (ideviceinfo, idevicepair,
+    idevicebackup2, ifuse via libimobiledevice/AFC, …) that do all the real
+    device communication. iPhone Link invokes these as external programs and
+    streams their output; it does not include or modify their source.
+
+UxPlay by FDH2 — https://github.com/FDH2/UxPlay  (GPL-3.0)
+    The AirPlay mirroring/audio receiver used by the Media page so the iPhone can
+    stream its screen and audio to this PC. iPhone Link runs `uxplay` as an
+    external program; it does not include or modify its source. UxPlay is an
+    optional dependency — without it, only the AirPlay receiver is unavailable.
+
+ifuse — https://github.com/libimobiledevice/ifuse  (LGPL-2.1-or-later)
+    FUSE mount of the device's media (DCIM) and per-app File-Sharing folders,
+    used by the Photos, Documents and Media pages. Invoked as an external program.
+
+GStreamer — https://gstreamer.freedesktop.org  (LGPL-2.1)
+    `gst-play-1.0` plays a selected camera-roll video locally, and GStreamer is
+    UxPlay's rendering backend. Invoked as external programs.
+
+Arch Linux Tweak Tool (ATT) by Erik Dubois — https://www.arcolinux.com  (GPL-3.0)
+    The look and feel of the GTK4 interface, the in-app toast notification, and
+    several CSS values are modelled on ATT (by way of the sibling Disk Recovery
+    Tool). With thanks to Erik Dubois and the ArcoLinux community.
+
+iDescriptor — https://github.com/iDescriptor/iDescriptor  (AGPL-3.0)
+    Consulted as a design REFERENCE only (notably that UxPlay is the practical
+    way to receive AirPlay on Linux). No iDescriptor source is included or copied;
+    iPhone Link remains GPL-3.0.
+
+Apple Notes / Messages on-device formats
+    The Notes and Messages exporters parse the device's own SQLite databases
+    (NoteStore.sqlite, sms.db) from an unencrypted backup, including the gzip/zlib
+    protobuf note bodies and the typedstream attributedBody message text. This is
+    original parsing code; the database formats are Apple's.
+
+GTK 4 / PyGObject
+    The graphical toolkit and Python bindings.

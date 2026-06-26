@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+
+# Local device backups (large, private — never commit)
+idevicebackup2_folder/
+
+# Internal build-process scaffolding — kept locally, never published
+begin_project
+needs_me

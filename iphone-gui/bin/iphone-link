@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+#
+# iphone-link — launcher for the iPhone Link GUI.
+#
+# Unlike the sibling Disk Recovery Tool, this does NOT need root: device access
+# goes through the per-user usbmuxd socket, so it runs as you. Do not run it with
+# sudo (a root process can't reach your pairing records or session bus cleanly).
+#
+set -euo pipefail
+
+if [[ "$(id -u)" == "0" ]]; then
+  echo "[ERROR]: Do not run iphone-link as root; it uses your user's usbmuxd." >&2
+  exit 1
+fi
+
+if [[ -z "${DISPLAY:-}" && -z "${WAYLAND_DISPLAY:-}" ]]; then
+  echo "[ERROR]: Neither DISPLAY nor WAYLAND_DISPLAY is set (no graphical session)." >&2
+  exit 1
+fi
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+
+APP=""
+for cand in "$SCRIPT_DIR/src/iphone_tool.py" \
+            "$SCRIPT_DIR/../src/iphone_tool.py" \
+            "/usr/share/iphone-link/src/iphone_tool.py"; do
+  [[ -f "$cand" ]] && { APP="$(cd -- "$(dirname -- "$cand")" && pwd)/$(basename "$cand")"; break; }
+done
+[[ -n "$APP" ]] || { echo "[ERROR]: iphone_tool.py not found." >&2; exit 1; }
+
+# Point the GUI at the backend scripts explicitly so it works from the source
+# tree or a system install.
+BACKEND_DIR=""
+for cand in "$SCRIPT_DIR/../../backend" \
+            "$SCRIPT_DIR/../backend" \
+            "/usr/share/iphone-link/backend"; do
+  if [[ -f "$cand/device-info.sh" ]]; then
+    BACKEND_DIR="$(cd -- "$cand" && pwd)"
+    break
+  fi
+done
+
+export IPHONE_BACKEND_DIR="${BACKEND_DIR:-}"
+exec python3 "$APP" "$@"
