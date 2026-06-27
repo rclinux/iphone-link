@@ -18,6 +18,23 @@ phone until it is connected, unlocked, and you tap **Trust**.
 
 ---
 
+## Screenshots
+
+A page per task in the sidebar. (Device identifiers below are redacted.)
+
+| | |
+|---|---|
+| **Device** — identity, pairing/trust, battery & storage, live from the phone | **Photos** — copy the camera roll to a folder, incremental |
+| ![Device page](docs/screenshots/device.png) | ![Photos page](docs/screenshots/photos.png) |
+| **Documents** — copy files in and out of an app's File Sharing folder | **Messages** — browse, read and export your conversations |
+| ![Documents page](docs/screenshots/documents.png) | ![Messages page](docs/screenshots/messages.png) |
+| **Notes** — browse, read and export your notes | **Media** — play camera-roll videos, or run the AirPlay receiver |
+| ![Notes page](docs/screenshots/notes.png) | ![Media page](docs/screenshots/media.png) |
+| **About** — version, what each page does, where the scripts live | |
+| ![About page](docs/screenshots/about.png) | |
+
+---
+
 ## Features
 
 The app is a sidebar of pages, each backed by one script in `backend/`:

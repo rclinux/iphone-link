@@ -11,7 +11,7 @@ from pathlib import Path
 
 APP_ID = "io.github.rcraig57.iPhoneLink"
 APP_NAME = "iPhone Link"
-APP_VERSION = "0.1.0"
+APP_VERSION = "0.1.1"
 ICON_NAME = "io.github.rcraig57.iPhoneLink"
 
 _HERE = Path(__file__).resolve().parent  # .../iphone-gui/src
