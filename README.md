@@ -64,7 +64,6 @@ The app is a sidebar of pages, each backed by one script in `backend/`:
 
 **Notification mirroring** and **clipboard sync** are not included: iOS exposes
 no public API to mirror them to a USB host without a companion iOS app. See the
-project history in `LOOP-STATE.md`.
 
 ---
 
@@ -152,7 +151,6 @@ iPhone_utility/
 │   └── data/                 desktop entry + icon
 ├── install.sh  uninstall.sh
 ├── LICENSE  NOTICE  README.md
-└── LOOP-STATE.md             build log / project history
 ```
 
 The GUI never reimplements device logic: each page builds a command line for a
