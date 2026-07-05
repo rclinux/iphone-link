@@ -63,8 +63,7 @@ The app is a sidebar of pages, each backed by one script in `backend/`:
 ### Out of scope
 
 **Notification mirroring** and **clipboard sync** are not included: iOS exposes
-no public API to mirror them to a USB host without a companion iOS app. See the
-
+no public API to mirror them to a USB host without a companion iOS app.
 ---
 
 ## How messages & notes work (and why a backup)
